@@ -11,12 +11,12 @@ const portfolioData = {
     handle: "mansiverma897993",
     title: "Full Stack Software Developer & Rust Developer",
     taglineQuote: "I love Rust. I write Rust. Rust is lust.",
-    avatar: "https://avatars.githubusercontent.com/u/104996923?v=4", // Mansi Verma GitHub Avatar
+    avatar: "mypic.png",
     location: "Ghaziabad / Delhi NCR, India",
     timezone: "Asia/Kolkata",
     status: "Building Finality Labs & Open Source Rust Systems",
-    bio1: "I'm a Systems and Full-Stack Software Developer specializing in Rust, distributed backends, and Solana on-chain architecture with 50+ merged PRs in production open-source codebases including Qualcomm GenieX, rust-lang/libc, Bevy, and GCHQ CyberChef.",
-    bio2: "Leading developer at CoE AI Skill Lab as Solana Blockchain Lead. Currently building Finality Labs — autonomous agentic system infrastructure on the Solana blockchain. Passionate about zero-copy architectures, program security, and low-latency systems.",
+    bio1: "I'm a Systems and Full-Stack Software Developer specializing in Rust, distributed backends, and Solana on-chain engineering. Founder of EBM (https://ebm-tech.vercel.app/) and tech content creator. Official contributor to Qualcomm GenieX (16+ PRs merged), rust-lang/libc, Bevy, and CyberChef with 60+ merged pull requests in production codebases.",
+    bio2: "",
     email: "ogmansi897@gmail.com",
     resumeUrl: "#resume-modal",
     socials: {
@@ -25,11 +25,17 @@ const portfolioData = {
       linkedin: "https://www.linkedin.com/in/mansi-verma-025539249/",
       youtube: "https://www.youtube.com/hashtag/expressbymansi",
       leetcode: "https://leetcode.com/u/mansiverma897993/",
-      discord: "https://discordapp.com/users/mansiverma897993"
+      discord: "https://discordapp.com/users/mansiverma897993",
+      ebm: "https://ebm-tech.vercel.app/"
     }
   },
 
   highlights: [
+    { 
+      title: "Founder of EBM (https://ebm-tech.vercel.app/) — Tech Content Creator", 
+      tag: "EBM / Media",
+      url: "https://ebm-tech.vercel.app/" 
+    },
     { 
       title: "Official Contributor in Qualcomm GenieX & Nexa AI (16+ high quality merged PRs)", 
       tag: "Qualcomm",
@@ -239,7 +245,7 @@ const portfolioData = {
   ],
 
   openSource: {
-    summary: "50+ pull requests merged into tier-1 open-source repositories and ecosystems.",
+    summary: "60+ pull requests merged into tier-1 open-source repositories and ecosystems.",
     prs: [
       {
         title: "qualcomm/GenieX: unblock cross-origin browser clients in server CORS middleware OpenAI API",

@@ -1,5 +1,5 @@
 /**
- * PORTFOLIO CLIENT ENGINE & INTERACTIONS
+ * PORTFOLIO CLIENT ENGINE & INTERACTIONS — MAN$I VERMA 🦀
  * Theme: Light/Neon Green (#00F801) & Dark Aesthetic Green (#0F460F)
  */
 
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderHighlights(data.highlights);
   renderWorkExperience(data.work);
   renderSkills(data.skills);
-  renderProjects(data.projects);
+  renderProjects(data.projects, data.moreProjects);
   renderOpenSource(data.openSource);
   renderHackathons(data.hackathons);
   renderAchievements(data.achievementsAndCerts);
@@ -44,9 +44,11 @@ function initProfile(personal) {
   const avatarImg = document.getElementById("avatarImg");
   const emailDisplay = document.getElementById("emailDisplay");
   const contribHandleLink = document.getElementById("contribHandleLink");
+  const taglineRust = document.getElementById("taglineRust");
 
-  if (authorName && personal.name) authorName.textContent = personal.name;
+  if (authorName && personal.name) authorName.innerHTML = `${escapeHtml(personal.name)} <span class="crab-emoji" title="Rustacean Crab">🦀</span>`;
   if (authorTitle && personal.title) authorTitle.textContent = personal.title;
+  if (taglineRust && personal.taglineQuote) taglineRust.textContent = personal.taglineQuote;
   if (authorLocation && personal.location) authorLocation.textContent = personal.location;
   if (avatarImg && personal.avatar) avatarImg.src = personal.avatar;
   if (emailDisplay && personal.email) emailDisplay.textContent = personal.email;
@@ -76,7 +78,6 @@ function initLiveClock(timeZone) {
       const formatter = new Intl.DateTimeFormat([], options);
       clockEl.textContent = formatter.format(now).toLowerCase();
     } catch (e) {
-      // Fallback to local machine time
       const now = new Date();
       clockEl.textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' }).toLowerCase();
     }
@@ -87,7 +88,7 @@ function initLiveClock(timeZone) {
 }
 
 /* --------------------------------------------------------------------------
-   Render Highlights Section (Screenshot 2)
+   Render Highlights Section (Screenshot 2 style)
    -------------------------------------------------------------------------- */
 function renderHighlights(highlights) {
   const container = document.getElementById("highlightsList");
@@ -95,14 +96,20 @@ function renderHighlights(highlights) {
 
   container.innerHTML = highlights.map(item => `
     <div class="highlight-row">
-      <span class="highlight-text">${escapeHtml(item.title)}</span>
+      ${item.url ? `
+        <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="highlight-text inline-link" style="border-bottom: none;">
+          ${escapeHtml(item.title)} ↗
+        </a>
+      ` : `
+        <span class="highlight-text">${escapeHtml(item.title)}</span>
+      `}
       <span class="highlight-tag">${escapeHtml(item.tag)}</span>
     </div>
   `).join("");
 }
 
 /* --------------------------------------------------------------------------
-   Render Work Section with Accordion (Screenshot 3)
+   Render Work Section with Accordion (Screenshot 3 style)
    -------------------------------------------------------------------------- */
 function renderWorkExperience(workItems) {
   const container = document.getElementById("workList");
@@ -176,34 +183,71 @@ function renderSkills(skillsData) {
 }
 
 /* --------------------------------------------------------------------------
-   Render Projects Section (Screenshot 4)
+   Render Projects Section (Screenshot 4 style + More Projects)
    -------------------------------------------------------------------------- */
-function renderProjects(projects) {
+function renderProjects(projects, moreProjects) {
   const container = document.getElementById("projectsList");
+  const moreContainer = document.getElementById("moreProjectsList");
+  const toggleBtn = document.getElementById("toggleMoreProjectsBtn");
+  const wrapper = document.getElementById("moreProjectsWrapper");
+
   if (!container || !projects) return;
 
-  container.innerHTML = projects.map(proj => `
-    <a href="${proj.url}" target="_blank" rel="noopener noreferrer" class="project-card">
-      <div class="project-header">
-        <span class="project-title">
-          ${escapeHtml(proj.title)}
-          ${proj.liveUrl ? `<span style="font-size: 0.72rem; color: var(--neon-green); font-family: var(--font-mono); font-weight: normal;">• Live</span>` : ''}
-        </span>
-        <div class="project-meta-right">
-          ${proj.stars ? `
-            <span class="star-count">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-              </svg>
-              ${escapeHtml(proj.stars)}
-            </span>
-          ` : ''}
-          <span>${escapeHtml(proj.language)}</span>
+  container.innerHTML = projects.map(proj => {
+    const tagsHtml = (proj.tags || []).map(t => `
+      <span class="tag-badge" style="font-size: 0.7rem; padding: 2px 6px;">${escapeHtml(t)}</span>
+    `).join("");
+
+    return `
+      <a href="${proj.url}" target="_blank" rel="noopener noreferrer" class="project-card">
+        <div class="project-header">
+          <span class="project-title">
+            ${escapeHtml(proj.title)}
+            ${proj.badge ? `<span style="font-size: 0.72rem; color: var(--neon-green); font-family: var(--font-mono); font-weight: normal; background: rgba(0,248,1,0.1); padding: 1px 6px; border-radius: 4px; border: 1px solid var(--neon-green-border);">• ${escapeHtml(proj.badge)}</span>` : ''}
+          </span>
+          <div class="project-meta-right">
+            ${proj.stars ? `
+              <span class="star-count">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+                ${escapeHtml(proj.stars)}
+              </span>
+            ` : ''}
+            <span>${escapeHtml(proj.language)}</span>
+          </div>
         </div>
-      </div>
-      <p class="project-desc">${escapeHtml(proj.description)}</p>
-    </a>
-  `).join("");
+        <p class="project-desc">${escapeHtml(proj.description)}</p>
+        ${tagsHtml ? `<div style="display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px;">${tagsHtml}</div>` : ''}
+      </a>
+    `;
+  }).join("");
+
+  // Render More Projects
+  if (moreContainer && moreProjects && moreProjects.length) {
+    moreContainer.innerHTML = moreProjects.map(p => `
+      <a href="${p.url}" target="_blank" rel="noopener noreferrer" class="project-card" style="border-style: dashed;">
+        <div class="project-header">
+          <span class="project-title">${escapeHtml(p.title)}</span>
+          <div class="project-meta-right">
+            <span class="star-count">${escapeHtml(p.stars)}</span>
+            <span>${escapeHtml(p.language)}</span>
+          </div>
+        </div>
+        <p class="project-desc">${escapeHtml(p.description)}</p>
+      </a>
+    `).join("");
+  }
+
+  // More Projects Toggle
+  if (toggleBtn && wrapper) {
+    let isOpen = false;
+    toggleBtn.addEventListener("click", () => {
+      isOpen = !isOpen;
+      wrapper.style.display = isOpen ? "block" : "none";
+      toggleBtn.innerHTML = isOpen ? "Fewer projects &uarr;" : "More projects &darr;";
+    });
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -219,16 +263,16 @@ function renderOpenSource(ossData) {
 
   if (!ossData) return;
   if (summaryEl && ossData.summary) {
-    summaryEl.innerHTML = `<strong>${escapeHtml(ossData.prs?.length || 78)} pull requests</strong> merged into projects I don't own, including denoland, jj-vcs, KDE, Vercel, and more.`;
+    summaryEl.innerHTML = `<strong>60+ pull requests</strong> merged into production codebases including Qualcomm GenieX, rust-lang/libc, Bevy, Floci, SuperteamDAO, and Juspay.`;
   }
 
   allPrsList = ossData.prs || [];
-  renderPrs(3); // Show first 3 by default, expand to all on click
+  renderPrs(4); // Show first 4 by default
 
   if (toggleBtn) {
     toggleBtn.addEventListener("click", () => {
       isShowingAllPrs = !isShowingAllPrs;
-      renderPrs(isShowingAllPrs ? allPrsList.length : 3);
+      renderPrs(isShowingAllPrs ? allPrsList.length : 4);
       toggleBtn.innerHTML = isShowingAllPrs 
         ? "Show fewer pull requests &uarr;" 
         : `Show all ${allPrsList.length} pull requests &darr;`;
@@ -287,19 +331,31 @@ function renderAchievements(achievements) {
     <div class="achievement-card">
       <div>
         <div class="achievement-top">
-          <h4 class="achievement-title">${escapeHtml(item.title)}</h4>
+          <h4 class="achievement-title">
+            ${item.url ? `
+              <a href="${item.url}" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;" class="inline-link">
+                ${escapeHtml(item.title)} ↗
+              </a>
+            ` : escapeHtml(item.title)}
+          </h4>
           <span class="achievement-badge">${escapeHtml(item.badge || item.date)}</span>
         </div>
         <p class="achievement-org">${escapeHtml(item.organization)}</p>
       </div>
       <p class="achievement-desc">${escapeHtml(item.description)}</p>
+      ${item.url ? `
+        <div style="margin-top: 10px;">
+          <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="section-link" style="font-size: 0.74rem; font-family: var(--font-mono); color: var(--neon-green);">
+            Verify Credential ↗
+          </a>
+        </div>
+      ` : ''}
     </div>
   `).join("");
 }
 
 /* --------------------------------------------------------------------------
-   Render GitHub Contributions Grid (Screenshot 5 bottom)
-   Generates 52-week calendar with Neon Green & Dark Green heat matrix
+   Render GitHub Contributions Grid (Screenshot 5 style)
    -------------------------------------------------------------------------- */
 function renderContributions(contribData) {
   const gridEl = document.getElementById("calendarGrid");
@@ -310,28 +366,22 @@ function renderContributions(contribData) {
     totalEl.textContent = contribData.totalThisYear.toLocaleString();
   }
 
-  // Generate 52 weeks x 7 days
   const weeks = 52;
   const daysPerWeek = 7;
   let html = "";
 
-  // Pseudo-random seeded pattern to create realistic GitHub commit frequency
   for (let w = 0; w < weeks; w++) {
     html += `<div class="calendar-week">`;
     for (let d = 0; d < daysPerWeek; d++) {
-      // Deterministic noise formula for organic commit distribution
-      const factor = (Math.sin(w * 0.45 + d * 0.8) + Math.cos(w * 0.15)) * 0.5 + 0.5;
-      const rand = ((w * 13 + d * 37) % 100) / 100;
-      
+      const rand = ((w * 17 + d * 43) % 100) / 100;
       let lvl = 0;
-      if (rand > 0.88) lvl = 4; // Bright neon green #00F801
-      else if (rand > 0.65) lvl = 3;
-      else if (rand > 0.42) lvl = 2;
-      else if (rand > 0.20) lvl = 1; // Dark aesthetic green #0F460F
+      if (rand > 0.85) lvl = 4; // #00F801
+      else if (rand > 0.62) lvl = 3;
+      else if (rand > 0.38) lvl = 2;
+      else if (rand > 0.16) lvl = 1; // #0F460F
       else lvl = 0;
 
-      // Approximate date string for tooltip
-      const approxCommits = lvl === 0 ? 0 : Math.round(lvl * 3 + rand * 4);
+      const approxCommits = lvl === 0 ? 0 : Math.round(lvl * 3 + rand * 5);
       const title = `${approxCommits} contributions on week ${w + 1}, day ${d + 1}`;
 
       html += `<div class="calendar-day lvl-${lvl}" title="${title}"></div>`;
@@ -354,11 +404,10 @@ function setupClipboard() {
   if (!emailBtn) return;
 
   emailBtn.addEventListener("click", () => {
-    const email = emailDisplay?.textContent?.trim() || "alex@vance.dev";
+    const email = emailDisplay?.textContent?.trim() || "ogmansi897@gmail.com";
     navigator.clipboard.writeText(email).then(() => {
       showToast(`Copied ${email} to clipboard!`);
     }).catch(() => {
-      // Fallback
       window.location.href = `mailto:${email}`;
     });
   });
@@ -384,26 +433,26 @@ function setupCommandPalette(data) {
 
   if (!modal || !input || !resultsList) return;
 
-  // Build searchable items catalogue
   const items = [
-    { label: "Go to Work Experience", category: "Section", action: () => scrollToId("work") },
-    { label: "Go to Skills", category: "Section", action: () => scrollToId("skills") },
-    { label: "Go to Projects", category: "Section", action: () => scrollToId("projects") },
-    { label: "Go to Open Source", category: "Section", action: () => scrollToId("oss") },
+    { label: "Go to Work & Positions", category: "Section", action: () => scrollToId("work") },
+    { label: "Go to Skills & Capabilities", category: "Section", action: () => scrollToId("skills") },
+    { label: "Go to Featured Projects", category: "Section", action: () => scrollToId("projects") },
+    { label: "Go to Open Source PRs", category: "Section", action: () => scrollToId("oss") },
     { label: "Go to Hackathons", category: "Section", action: () => scrollToId("hackathons") },
-    { label: "Go to Achievements & Certifications", category: "Section", action: () => scrollToId("achievements") },
+    { label: "Go to Certifications & Achievements", category: "Section", action: () => scrollToId("achievements") },
     { label: "Go to Highlights", category: "Section", action: () => scrollToId("highlights") },
     { label: "Go to GitHub Contributions Calendar", category: "Section", action: () => scrollToId("contributions") },
-    { label: "Copy Email Address", category: "Action", action: () => document.getElementById("emailCopyBtn")?.click() },
-    { label: "View / Download Resume", category: "Action", action: () => openResumeModal() },
-    { label: "Book a 1:1 Intro Call", category: "Action", action: () => window.open(data.personal?.calendly || "https://cal.com", "_blank") },
-    { label: "Visit GitHub Profile", category: "Social", action: () => window.open(data.personal?.socials?.github || "https://github.com", "_blank") },
-    { label: "Visit X / Twitter Profile", category: "Social", action: () => window.open(data.personal?.socials?.twitter || "https://x.com", "_blank") },
-    { label: "Visit LinkedIn Profile", category: "Social", action: () => window.open(data.personal?.socials?.linkedin || "https://linkedin.com", "_blank") }
+    { label: "Copy Email: ogmansi897@gmail.com", category: "Action", action: () => document.getElementById("emailCopyBtn")?.click() },
+    { label: "View Resume Summary", category: "Action", action: () => openResumeModal() },
+    { label: "Visit GitHub: @mansiverma897993", category: "Social", action: () => window.open("https://github.com/mansiverma897993", "_blank") },
+    { label: "Visit Twitter / X: @mansiverma897", category: "Social", action: () => window.open("https://x.com/mansiverma897", "_blank") },
+    { label: "Visit LinkedIn Profile", category: "Social", action: () => window.open(data.personal?.socials?.linkedin || "https://linkedin.com", "_blank") },
+    { label: "Visit YouTube Channel (#ExpressByMansi)", category: "Social", action: () => window.open("https://www.youtube.com/hashtag/expressbymansi", "_blank") },
+    { label: "Open Discord Profile", category: "Social", action: () => window.open("https://discordapp.com/users/mansiverma897993", "_blank") }
   ];
 
-  // Add individual projects to search
-  (data.projects || []).forEach(p => {
+  // Add projects to search
+  (data.projects || []).concat(data.moreProjects || []).forEach(p => {
     items.push({
       label: `Project: ${p.title} (${p.language})`,
       category: "Project",
@@ -472,7 +521,6 @@ function setupCommandPalette(data) {
       </li>
     `).join("");
 
-    // Click item
     resultsList.querySelectorAll(".cmd-item").forEach(li => {
       li.addEventListener("click", () => {
         const idx = parseInt(li.getAttribute("data-idx"), 10);
@@ -488,7 +536,6 @@ function setupCommandPalette(data) {
     }
   }
 
-  // Keyboard navigation
   input.addEventListener("input", (e) => filterItems(e.target.value));
 
   input.addEventListener("keydown", (e) => {
@@ -508,7 +555,6 @@ function setupCommandPalette(data) {
     }
   });
 
-  // Global hotkeys (Ctrl+K or Cmd+K)
   window.addEventListener("keydown", (e) => {
     if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
       e.preventDefault();
@@ -524,7 +570,6 @@ function setupCommandPalette(data) {
 
   if (triggerBtn) triggerBtn.addEventListener("click", openPalette);
 
-  // Click outside to close
   modal.addEventListener("click", (e) => {
     if (e.target === modal) closePalette();
   });

@@ -46,7 +46,7 @@
         <div class="avatar-wrapper">
           <img 
             id="avatarImg"
-            src="https://avatars.githubusercontent.com/u/104996923?v=4" 
+            src="mypic.png" 
             alt="Mansi Verma" 
             class="avatar-img"
           >
@@ -59,21 +59,10 @@
         </div>
       </div>
 
-      <!-- Live Location & Clock Status Pill -->
-      <div class="status-pill" id="statusPill">
-        <span class="status-dot"></span>
-        <span id="authorLocation">Delhi NCR / Ghaziabad, India</span>
-        <span class="pill-divider">•</span>
-        <span class="live-clock" id="liveClock">Loading time...</span>
-      </div>
-
       <!-- Bio Copy -->
       <div class="bio-copy" id="bioCopy">
         <p>
-          I'm a Systems and Full-Stack Software Developer specializing in <strong>Rust</strong>, distributed backends, and Solana on-chain engineering. Official contributor to <a href="https://github.com/mansiverma897993?org=qualcomm&year_list=1" target="_blank" class="inline-link">Qualcomm GenieX</a> (16+ PRs merged), <a href="https://github.com/rust-lang/libc" target="_blank" class="inline-link">rust-lang/libc</a>, <a href="https://github.com/bevyengine/bevy" target="_blank" class="inline-link">Bevy Engine</a>, and <a href="https://github.com/gchq/CyberChef" target="_blank" class="inline-link">CyberChef</a> with <strong>50+ merged pull requests</strong> in production codebases.
-        </p>
-        <p>
-          Currently <strong>Solana Blockchain Lead</strong> at CoE AI Skill Lab KIET and building <a href="https://github.com/Finality-Labs" target="_blank" class="inline-link">Finality Labs</a> — autonomous agentic system infrastructure on Solana. Alumna of the <a href="#achievements" class="inline-link">Aspire Leadership Program (Harvard affiliated)</a>, <a href="#achievements" class="inline-link">Rektoff Advanced Rust Security (Cohort 5)</a>, and <a href="#achievements" class="inline-link">100xdevs (Cohort 3)</a>.
+          I'm a Systems and Full-Stack Software Developer specializing in <strong>Rust</strong>, distributed backends, and Solana on-chain engineering. Founder of <a href="https://ebm-tech.vercel.app/" target="_blank" class="inline-link">EBM</a> and tech content creator. Official contributor to <a href="https://github.com/mansiverma897993?org=qualcomm&year_list=1" target="_blank" class="inline-link">Qualcomm GenieX</a> (16+ PRs merged), <a href="https://github.com/rust-lang/libc" target="_blank" class="inline-link">rust-lang/libc</a>, <a href="https://github.com/bevyengine/bevy" target="_blank" class="inline-link">Bevy Engine</a>, and <a href="https://github.com/gchq/CyberChef" target="_blank" class="inline-link">CyberChef</a> with <strong>60+ merged pull requests</strong> in production codebases.
         </p>
       </div>
 
@@ -155,7 +144,7 @@
     <section class="section-block" id="oss">
       <h2 class="section-title">Open Source Ecosystem</h2>
       <p class="oss-summary" id="ossSummary">
-        <strong>50+ pull requests</strong> merged into tier-1 open-source codebases including Qualcomm GenieX, rust-lang/libc, Bevy, Floci, SuperteamDAO, and Juspay.
+        <strong>60+ pull requests</strong> merged into tier-1 open-source codebases including Qualcomm GenieX, rust-lang/libc, Bevy, Floci, SuperteamDAO, and Juspay.
       </p>
       <div class="pr-list" id="prList">
         <!-- Rendered dynamically from data.js -->
@@ -223,15 +212,41 @@
       </div>
     </section>
 
-    <!-- Site Footer -->
+    <!-- Site Footer (xevrion style) -->
     <footer class="site-footer">
-      <div class="footer-left">
-        <span>&copy; <span id="currentYear">2026</span> MAN$I VERMA 🦀</span>
-        <span>•</span>
-        <span class="footer-theme-tag">Neon Green (#00F801) &amp; Dark (#0F460F)</span>
-      </div>
-      <div>
-        <a href="#intro" class="section-link">Back to top &uarr;</a>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">MAN$I VERMA <span class="crab-emoji">🦀</span></div>
+          <p class="footer-bio">Developer, building systems and tools people like to use.</p>
+          <div class="footer-copy">
+            <span>&copy; <span id="currentYear">2026</span> MAN$I VERMA</span>
+            <span>•</span>
+            <span class="footer-theme-tag">#00F801 &amp; #0F460F</span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Work</h4>
+          <ul>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#work">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#hackathons">Hackathons</a></li>
+            <li><a href="#achievements">Certifications</a></li>
+            <li><a href="#resume" onclick="openResumeModal(); return false;">Resume</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Elsewhere</h4>
+          <ul>
+            <li><a href="https://github.com/mansiverma897993" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
+            <li><a href="https://www.linkedin.com/in/mansi-verma-025539249/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></li>
+            <li><a href="https://x.com/mansiverma897" target="_blank" rel="noopener noreferrer">X / Twitter ↗</a></li>
+            <li><a href="https://www.youtube.com/hashtag/expressbymansi" target="_blank" rel="noopener noreferrer" style="color: #ff5555;">YouTube ↗</a></li>
+            <li><a href="https://discordapp.com/users/mansiverma897993" target="_blank" rel="noopener noreferrer" style="color: #7289da;">Discord ↗</a></li>
+            <li><a href="https://leetcode.com/u/mansiverma897993/" target="_blank" rel="noopener noreferrer">LeetCode ↗</a></li>
+            <li><a href="https://ebm-tech.vercel.app/" target="_blank" rel="noopener noreferrer" style="color: var(--neon-green);">EBM ↗</a></li>
+          </ul>
+        </div>
       </div>
     </footer>
 
@@ -265,7 +280,7 @@
         <button id="closeResumeBtn" style="background: none; border: none; color: var(--text-muted); font-size: 1.4rem; cursor: pointer;">&times;</button>
       </div>
       <div style="background: rgba(15,70,15,0.25); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 16px; margin-bottom: 20px; font-size: 0.85rem; line-height: 1.6; color: #cfdecb;">
-        <p style="margin-bottom: 8px;"><strong style="color: #fff;">Summary:</strong> Software Developer specializing in Rust, systems programming, and full-stack engineering with 50+ merged PRs in production open-source codebases including Qualcomm GenieX, rust-lang/libc, Bevy, and GCHQ CyberChef.</p>
+        <p style="margin-bottom: 8px;"><strong style="color: #fff;">Summary:</strong> Software Developer specializing in Rust, systems programming, and full-stack engineering with 60+ merged PRs in production open-source codebases including Qualcomm GenieX, rust-lang/libc, Bevy, and GCHQ CyberChef.</p>
         <p style="margin-bottom: 8px;"><strong style="color: #fff;">Key Stack:</strong> Rust, Axum, Tokio, Solana, Anchor, TypeScript, Next.js 15, Go, C/C++, PostgreSQL, Redpanda, Docker, Kubernetes.</p>
         <p><strong style="color: #fff;">Education:</strong> B.Tech CSE (2024–2028), KIET Deemed to be University (SGPA: 8.2).</p>
       </div>

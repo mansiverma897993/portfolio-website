@@ -201,8 +201,8 @@ body {
 
 .avatar-wrapper {
   position: relative;
-  width: 58px;
-  height: 58px;
+  width: 72px;
+  height: 72px;
   flex-shrink: 0;
 }
 
@@ -211,21 +211,29 @@ body {
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid var(--dark-green);
-  box-shadow: 0 0 16px rgba(0, 248, 1, 0.18);
+  object-position: center 25%;
+  border: 2px solid var(--neon-green-border);
+  box-shadow: 0 0 20px rgba(0, 248, 1, 0.28);
   display: block;
+  transition: all var(--transition-fast);
+}
+
+.avatar-img:hover {
+  border-color: var(--neon-green);
+  box-shadow: 0 0 26px rgba(0, 248, 1, 0.45);
+  transform: scale(1.02);
 }
 
 .avatar-online-dot {
   position: absolute;
-  bottom: 1px;
-  right: 1px;
-  width: 13px;
-  height: 13px;
+  bottom: 2px;
+  right: 2px;
+  width: 15px;
+  height: 15px;
   background-color: var(--neon-green);
   border: 2.5px solid var(--bg-deep);
   border-radius: 50%;
-  box-shadow: 0 0 8px var(--neon-green);
+  box-shadow: 0 0 10px var(--neon-green);
 }
 
 .profile-meta h1 {
@@ -1168,28 +1176,83 @@ body {
 /* --------------------------------------------------------------------------
    Footer
    -------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------
+   Footer (xevrion style)
+   -------------------------------------------------------------------------- */
 .site-footer {
   margin-top: 80px;
-  padding-top: 24px;
-  border-top: 1px solid rgba(15, 70, 15, 0.4);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
-  font-size: 0.8rem;
-  color: var(--text-muted);
+  padding-top: 36px;
+  border-top: 1px solid rgba(15, 70, 15, 0.45);
 }
 
-.footer-left {
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 36px;
+}
+
+.footer-brand .footer-logo {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 6px;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 6px;
+}
+
+.footer-brand .footer-bio {
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin-bottom: 12px;
+}
+
+.footer-copy {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
 }
 
 .footer-theme-tag {
   color: var(--neon-green);
+}
+
+.footer-col h4 {
+  font-size: 0.8rem;
   font-family: var(--font-mono);
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.footer-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.footer-col a {
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.footer-col a:hover {
+  color: var(--neon-green);
+}
+
+@media (max-width: 640px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
 }
 
 /* --------------------------------------------------------------------------
