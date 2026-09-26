@@ -15,13 +15,13 @@
 
   --dark-green: #0F460F;
   --dark-green-rgb: 15, 70, 15;
-  --dark-green-card: rgba(15, 70, 15, 0.18);
-  --dark-green-hover: rgba(15, 70, 15, 0.38);
-  --dark-green-border: rgba(15, 70, 15, 0.75);
+  --dark-green-card: #080d08;
+  --dark-green-hover: #0c140c;
+  --dark-green-border: rgba(15, 70, 15, 0.4);
 
   --bg-deep: #050805;
-  --bg-surface: #0a0f0a;
-  --bg-elevated: #0f160f;
+  --bg-surface: #070c07;
+  --bg-elevated: #0a110a;
 
   --text-primary: #f2fcf2;
   --text-secondary: #9cb49c;
@@ -69,9 +69,9 @@ body {
   min-height: 100vh;
   background-color: var(--bg-deep);
   background-image: 
-    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(15, 70, 15, 0.42), transparent 75%),
-    radial-gradient(circle 400px at 10% 20%, rgba(0, 248, 1, 0.035), transparent 80%),
-    radial-gradient(circle 350px at 90% 60%, rgba(15, 70, 15, 0.2), transparent 70%);
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(15, 70, 15, 0.16), transparent 75%),
+    radial-gradient(circle 400px at 10% 20%, rgba(0, 248, 1, 0.02), transparent 80%),
+    radial-gradient(circle 350px at 90% 60%, rgba(15, 70, 15, 0.08), transparent 70%);
   background-attachment: fixed;
   color: var(--text-primary);
   line-height: 1.68;
@@ -599,18 +599,30 @@ body {
 }
 
 .company-logo {
-  width: 32px;
-  height: 32px;
-  border-radius: var(--radius-sm);
-  background: #0d1a0d;
-  border: 1px solid var(--border-subtle);
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #060b06;
+  border: 1px solid rgba(15, 70, 15, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 700;
-  font-size: 0.9rem;
-  color: var(--neon-green);
   flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.work-item:hover .company-logo {
+  border-color: rgba(0, 248, 1, 0.5);
+  box-shadow: 0 0 10px rgba(0, 248, 1, 0.2);
+}
+
+.company-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--neon-green);
+  box-shadow: 0 0 6px var(--neon-green);
+  display: inline-block;
 }
 
 .work-title-group h3 {
@@ -1175,9 +1187,6 @@ body {
 
 /* --------------------------------------------------------------------------
    Footer
-   -------------------------------------------------------------------------- */
-/* --------------------------------------------------------------------------
-   Footer (xevrion style)
    -------------------------------------------------------------------------- */
 .site-footer {
   margin-top: 80px;

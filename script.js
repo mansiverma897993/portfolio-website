@@ -20,7 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
   renderOpenSource(data.openSource);
   renderHackathons(data.hackathons);
   renderAchievements(data.achievementsAndCerts);
-  renderContributions(data.contributions);
 
   // 4. Setup Interactive Features
   setupClipboard();
@@ -116,8 +115,29 @@ function renderWorkExperience(workItems) {
   if (!container || !workItems) return;
 
   container.innerHTML = workItems.map((job, idx) => {
-    const isFirst = idx === 0;
     const initialChar = job.company.charAt(0);
+    const hasBody = !!(job.description || (job.bullets && job.bullets.length) || (job.technologies && job.technologies.length) || (job.links && job.links.length));
+
+    if (!hasBody) {
+      return `
+        <div class="work-item" data-idx="${idx}" style="cursor: pointer;" onclick="document.getElementById('oss')?.scrollIntoView({behavior: 'smooth'})">
+          <div class="work-header">
+            <div class="work-main-info">
+              <div class="company-logo"><span class="company-dot"></span></div>
+              <div class="work-title-group">
+                <h3>${escapeHtml(job.company)}</h3>
+                <span class="work-role">${escapeHtml(job.role)}</span>
+              </div>
+            </div>
+            <div class="work-meta-right">
+              <span class="work-period">${escapeHtml(job.period)}</span>
+              <span style="color: var(--neon-green); font-size: 0.78rem; font-family: var(--font-mono); margin-left: 6px;">View PRs ↗</span>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
     const bulletsHtml = (job.bullets || []).map(b => `<li>${escapeHtml(b)}</li>`).join("");
     const linksHtml = (job.links || []).map(l => `
       <a href="${l.url}" target="_blank" rel="noopener noreferrer" class="tag-badge">${escapeHtml(l.label)} ↗</a>
@@ -127,10 +147,10 @@ function renderWorkExperience(workItems) {
     `).join("");
 
     return `
-      <div class="work-item ${isFirst ? 'expanded' : ''}" data-idx="${idx}">
+      <div class="work-item" data-idx="${idx}">
         <div class="work-header" onclick="toggleWorkAccordion(${idx})">
           <div class="work-main-info">
-            <div class="company-logo">${initialChar}</div>
+            <div class="company-logo"><span class="company-dot"></span></div>
             <div class="work-title-group">
               <h3>${escapeHtml(job.company)}</h3>
               <span class="work-role">${escapeHtml(job.role)}</span>
@@ -144,7 +164,7 @@ function renderWorkExperience(workItems) {
           </div>
         </div>
         <div class="work-body">
-          <p class="work-summary">${escapeHtml(job.description)}</p>
+          ${job.description ? `<p class="work-summary">${escapeHtml(job.description)}</p>` : ''}
           ${bulletsHtml ? `<ul class="work-bullets">${bulletsHtml}</ul>` : ''}
           <div class="work-footer-links">
             ${linksHtml}
@@ -267,12 +287,12 @@ function renderOpenSource(ossData) {
   }
 
   allPrsList = ossData.prs || [];
-  renderPrs(4); // Show first 4 by default
+  renderPrs(6); // Show first 6 by default
 
   if (toggleBtn) {
     toggleBtn.addEventListener("click", () => {
       isShowingAllPrs = !isShowingAllPrs;
-      renderPrs(isShowingAllPrs ? allPrsList.length : 4);
+      renderPrs(isShowingAllPrs ? allPrsList.length : 6);
       toggleBtn.innerHTML = isShowingAllPrs 
         ? "Show fewer pull requests &uarr;" 
         : `Show all ${allPrsList.length} pull requests &darr;`;
@@ -309,13 +329,7 @@ function renderHackathons(hackathons) {
         <h3 class="hackathon-title">${escapeHtml(h.event)}</h3>
         <span class="hackathon-award">${escapeHtml(h.award)}</span>
       </div>
-      <div class="hackathon-project">
-        Project: <span>${escapeHtml(h.project)}</span>
-      </div>
       <p class="hackathon-desc">${escapeHtml(h.description)}</p>
-      <div class="hackathon-links">
-        ${(h.links || []).map(l => `<a href="${l.url}" target="_blank" rel="noopener noreferrer">${escapeHtml(l.label)} ↗</a>`).join("")}
-      </div>
     </div>
   `).join("");
 }
@@ -352,44 +366,6 @@ function renderAchievements(achievements) {
       ` : ''}
     </div>
   `).join("");
-}
-
-/* --------------------------------------------------------------------------
-   Render GitHub Contributions Grid (Screenshot 5 style)
-   -------------------------------------------------------------------------- */
-function renderContributions(contribData) {
-  const gridEl = document.getElementById("calendarGrid");
-  const totalEl = document.getElementById("contribTotal");
-  if (!gridEl) return;
-
-  if (totalEl && contribData?.totalThisYear) {
-    totalEl.textContent = contribData.totalThisYear.toLocaleString();
-  }
-
-  const weeks = 52;
-  const daysPerWeek = 7;
-  let html = "";
-
-  for (let w = 0; w < weeks; w++) {
-    html += `<div class="calendar-week">`;
-    for (let d = 0; d < daysPerWeek; d++) {
-      const rand = ((w * 17 + d * 43) % 100) / 100;
-      let lvl = 0;
-      if (rand > 0.85) lvl = 4; // #00F801
-      else if (rand > 0.62) lvl = 3;
-      else if (rand > 0.38) lvl = 2;
-      else if (rand > 0.16) lvl = 1; // #0F460F
-      else lvl = 0;
-
-      const approxCommits = lvl === 0 ? 0 : Math.round(lvl * 3 + rand * 5);
-      const title = `${approxCommits} contributions on week ${w + 1}, day ${d + 1}`;
-
-      html += `<div class="calendar-day lvl-${lvl}" title="${title}"></div>`;
-    }
-    html += `</div>`;
-  }
-
-  gridEl.innerHTML = html;
 }
 
 /* --------------------------------------------------------------------------
@@ -441,14 +417,14 @@ function setupCommandPalette(data) {
     { label: "Go to Hackathons", category: "Section", action: () => scrollToId("hackathons") },
     { label: "Go to Certifications & Achievements", category: "Section", action: () => scrollToId("achievements") },
     { label: "Go to Highlights", category: "Section", action: () => scrollToId("highlights") },
-    { label: "Go to GitHub Contributions Calendar", category: "Section", action: () => scrollToId("contributions") },
     { label: "Copy Email: ogmansi897@gmail.com", category: "Action", action: () => document.getElementById("emailCopyBtn")?.click() },
     { label: "Open Resume (Google Drive)", category: "Action", action: () => window.open(data.personal?.resumeUrl || "https://drive.google.com/file/d/1dUPG9-pj0mQ8EQxMUsu3stL_KPND7NuB/view?usp=drive_link", "_blank") },
     { label: "Visit GitHub: @mansiverma897993", category: "Social", action: () => window.open("https://github.com/mansiverma897993", "_blank") },
     { label: "Visit Twitter / X: @mansiverma897", category: "Social", action: () => window.open("https://x.com/mansiverma897", "_blank") },
     { label: "Visit LinkedIn Profile", category: "Social", action: () => window.open(data.personal?.socials?.linkedin || "https://linkedin.com", "_blank") },
     { label: "Visit YouTube Channel (#ExpressByMansi)", category: "Social", action: () => window.open("https://www.youtube.com/hashtag/expressbymansi", "_blank") },
-    { label: "Open Discord Profile", category: "Social", action: () => window.open("https://discordapp.com/users/mansiverma897993", "_blank") }
+    { label: "Visit LeetCode: @mansiverma897", category: "Social", action: () => window.open(data.personal?.socials?.leetcode || "https://leetcode.com/u/mansiverma897/", "_blank") },
+    { label: "Join Discord Community", category: "Social", action: () => window.open(data.personal?.socials?.discord || "https://discord.gg/missmv897_66227", "_blank") }
   ];
 
   // Add projects to search
