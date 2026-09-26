@@ -1,5 +1,5 @@
 /**
- * PORTFOLIO CONFIGURATION DATA — MAN$I VERMA 🦀
+ * PORTFOLIO CONFIGURATION DATA • MAN$I VERMA 🦀
  * =============================================================================
  * Real profile information, projects, open-source PRs, hackathons, and certs
  * =============================================================================
@@ -7,7 +7,7 @@
 
 const portfolioData = {
   personal: {
-    name: "MAN$I VERMA 🦀",
+    name: "MAN$I VERMA",
     handle: "mansiverma897993",
     title: "Full Stack Software Developer & Rust Developer",
     taglineQuote: "I love Rust. I write Rust. Rust is lust.",
@@ -15,10 +15,10 @@ const portfolioData = {
     location: "Ghaziabad / Delhi NCR, India",
     timezone: "Asia/Kolkata",
     status: "Building Finality Labs & Open Source Rust Systems",
-    bio1: "I'm a Systems and Full-Stack Software Developer specializing in Rust, distributed backends, and Solana on-chain engineering. Founder of EBM (https://ebm-tech.vercel.app/) and tech content creator. Official contributor to Qualcomm GenieX (16+ PRs merged), rust-lang/libc, Bevy, and CyberChef with 60+ merged pull requests in production codebases.",
+    bio1: "I'm a Systems and Full-Stack Software Developer specializing in Rust, distributed backends, and Solana on-chain engineering. Founder of EBM (https://ebm-tech.vercel.app/) and tech content creator. Official contributor to Qualcomm GenieX (16+ PRs merged), Juspay, Microsoft, Floci, BOA, rust-lang/libc, Bevy, and CyberChef with 60+ merged pull requests in production codebases.",
     bio2: "",
     email: "ogmansi897@gmail.com",
-    resumeUrl: "#resume-modal",
+    resumeUrl: "https://drive.google.com/file/d/1dUPG9-pj0mQ8EQxMUsu3stL_KPND7NuB/view?usp=drive_link",
     socials: {
       github: "https://github.com/mansiverma897993",
       twitter: "https://x.com/mansiverma897",
@@ -32,7 +32,7 @@ const portfolioData = {
 
   highlights: [
     { 
-      title: "Founder of EBM (https://ebm-tech.vercel.app/) — Tech Content Creator", 
+      title: "Founder of EBM (https://ebm-tech.vercel.app/) • Tech Content Creator", 
       tag: "EBM / Media",
       url: "https://ebm-tech.vercel.app/" 
     },
@@ -67,12 +67,12 @@ const portfolioData = {
       url: "https://drive.google.com/file/d/1fwDZIDoRx-Ha373JFG9ZcQui4SbkwA7V/view" 
     },
     { 
-      title: "Tech YouTuber & Content Creator (#ExpressByMansi — 1.16k+ subscribers)", 
+      title: "Tech YouTuber & Content Creator (#ExpressByMansi • 1.16k+ subscribers)", 
       tag: "YouTube",
       url: "https://www.youtube.com/hashtag/expressbymansi" 
     },
     { 
-      title: "50+ Merged Pull Requests across top-tier open source production repos", 
+      title: "60+ Merged Pull Requests across top-tier open source production repos", 
       tag: "Open Source",
       url: "https://github.com/mansiverma897993" 
     }
@@ -80,25 +80,27 @@ const portfolioData = {
 
   work: [
     {
-      company: "Neeyat AI",
-      role: "Backend Engineering Intern",
-      period: "2025 — Present",
-      location: "Remote / Hybrid",
-      description: "Building high-performance context-based backend systems and agentic AI pipelines.",
+      company: "Open Source Ecosystem",
+      role: "Core Contributor (Rust, Systems, AI Infrastructure)",
+      period: "Present",
+      location: "Remote / Global",
+      description: "Shipped 60+ merged pull requests into production systems codebases including Qualcomm GenieX, Juspay, Microsoft, Floci, BOA, rust-lang/libc, Bevy, and SuperteamDAO.",
       bullets: [
-        "Architecting robust context-retrieval pipelines, optimizing embedding lookup latency, and streaming APIs.",
-        "Developing scalable backend microservices, REST/WebSocket APIs, and integration middleware for production workflows.",
-        "Collaborating on high-availability cloud infrastructure and deterministic testing regimes."
+        "Qualcomm GenieX: Unblocked cross-origin browser clients in server CORS middleware for OpenAI API and optimized multi-core HTP execution.",
+        "rust-lang/libc: Added SOL_LOCAL socket constants for FreeBSD targets directly upstream.",
+        "Juspay & Microsoft: Shipped fixes and enhancements to high-throughput open source ecosystems and developer tooling.",
+        "Bevy Game Engine & Floci: Linked Propagate structs into hierarchy plugin docs and built Eventarc trigger routing."
       ],
       links: [
-        { label: "Neeyat AI", url: "https://github.com/mansiverma897993" }
+        { label: "Qualcomm PRs", url: "https://github.com/mansiverma897993?org=qualcomm&year_list=1" },
+        { label: "GitHub Profile", url: "https://github.com/mansiverma897993" }
       ],
-      technologies: ["Node.js", "Python", "Vector DBs", "FastAPI", "PostgreSQL", "Docker"]
+      technologies: ["Rust", "C++", "CORS Middleware", "Libc", "Bevy", "AI Runtimes"]
     },
     {
       company: "CoE AI Skill Lab KIET",
       role: "Solana Blockchain Lead",
-      period: "2024 — Present",
+      period: "Feb 2026 - Present",
       location: "Ghaziabad, India",
       description: "Leading Web3 and blockchain research initiatives, mentoring developers, and architecting on-chain programs on Solana.",
       bullets: [
@@ -112,22 +114,16 @@ const portfolioData = {
       technologies: ["Solana", "Rust", "Anchor", "web3.js", "SPL Tokens", "Security Auditing"]
     },
     {
-      company: "Open Source Ecosystem",
-      role: "Core Contributor (Rust, Systems, AI Infrastructure)",
-      period: "May 2024 — Present",
-      location: "Remote / Global",
-      description: "Shipped 50+ merged pull requests into production systems codebases including Qualcomm, rust-lang/libc, Bevy, Floci, SuperteamDAO, and Juspay.",
-      bullets: [
-        "Qualcomm GenieX: Unblocked cross-origin browser clients in server CORS middleware for OpenAI API and optimized multi-core HTP execution.",
-        "rust-lang/libc: Added SOL_LOCAL socket constants for FreeBSD targets directly upstream.",
-        "Bevy Game Engine: Linked Propagate structs into hierarchy plugin documentation and core engine docs.",
-        "SuperteamDAO Earn & Juspay Neurolink: Built live stats panels, Twitter/X integration, and partial object parsing from truncated LLM outputs."
-      ],
+      company: "Neeyat AI",
+      role: "Backend Engineering Intern",
+      period: "May 2026",
+      location: "Remote / Hybrid",
+      description: "Building high-performance context-based backend systems and agentic AI pipelines.",
+      bullets: [],
       links: [
-        { label: "Qualcomm PRs", url: "https://github.com/mansiverma897993?org=qualcomm&year_list=1" },
-        { label: "GitHub Profile", url: "https://github.com/mansiverma897993" }
+        { label: "Neeyat AI", url: "https://github.com/mansiverma897993" }
       ],
-      technologies: ["Rust", "C++", "CORS Middleware", "Libc", "Bevy", "AI Runtimes"]
+      technologies: ["Node.js", "Python", "Vector DBs", "FastAPI", "PostgreSQL", "Docker"]
     }
   ],
 
@@ -245,7 +241,7 @@ const portfolioData = {
   ],
 
   openSource: {
-    summary: "60+ pull requests merged into tier-1 open-source repositories and ecosystems.",
+    summary: "60+ pull requests merged into tier-1 open-source repositories and ecosystems including Qualcomm GenieX, Juspay, Microsoft, Floci, BOA, rust-lang/libc, and Bevy.",
     prs: [
       {
         title: "qualcomm/GenieX: unblock cross-origin browser clients in server CORS middleware OpenAI API",
@@ -321,7 +317,7 @@ const portfolioData = {
       event: "HackAura by GeekHive",
       award: "🏆 1st Runner-Up Winner",
       project: "VoteX",
-      description: "Engineered VoteX — a high-integrity blockchain-based decentralized voting application ensuring transparent ballot immutability, zero-knowledge voter privacy, and real-time verifiable tallying.",
+      description: "Engineered VoteX - a high-integrity blockchain-based decentralized voting application ensuring transparent ballot immutability, zero-knowledge voter privacy, and real-time verifiable tallying.",
       date: "Sep 2025",
       links: [
         { label: "VoteX Repo", url: "https://github.com/mansiverma897993" }
@@ -351,7 +347,7 @@ const portfolioData = {
 
   achievementsAndCerts: [
     {
-      title: "AWS Certified Solutions Architect – Associate",
+      title: "AWS Certified Solutions Architect - Associate",
       organization: "Amazon Web Services",
       date: "Aug 2026",
       description: "Designed scalable, secure, and cost-efficient cloud architecture with multi-VPC routing, automated failovers, and cloud-native resilience.",
@@ -383,15 +379,15 @@ const portfolioData = {
       url: "https://drive.google.com/file/d/1vTYLfPC3M1wXMKg-aH445oNsOGgVKEjB/view"
     },
     {
-      title: "Cohort 3 Graduate — Full Stack & Systems",
+      title: "Cohort 3 Graduate • Full Stack & Systems",
       organization: "100xdevs (Harkirat Singh)",
-      date: "2024 — 2025",
+      date: "2024 - 2025",
       description: "Completed comprehensive advanced engineering curriculum covering DevOps, Docker, Kubernetes, distributed message queues, and high-scale backends.",
       badge: "100xdevs",
       url: "https://github.com/mansiverma897993"
     },
     {
-      title: "Solana Blockchain Lead — CoE AI Skill Lab",
+      title: "Solana Blockchain Lead • CoE AI Skill Lab",
       organization: "KIET Deemed to be University",
       date: "Present",
       description: "Leading Web3 and decentralized systems development, mentoring students, and orchestrating hackathon initiatives.",
@@ -401,8 +397,8 @@ const portfolioData = {
   ],
 
   education: {
-    degree: "Bachelor of Technology (B.Tech) - Computer Science and Engineering",
-    period: "Sep 2024 — June 2028",
+    degree: "Bachelor of Technology (B.Tech) • Computer Science and Engineering",
+    period: "Sep 2024 - June 2028",
     institution: "KIET Deemed to be University, Ghaziabad, India",
     sgpa: "8.2 (Till 4th Semester)"
   },

@@ -1,5 +1,5 @@
 /**
- * PORTFOLIO CLIENT ENGINE & INTERACTIONS — MAN$I VERMA 🦀
+ * PORTFOLIO CLIENT ENGINE & INTERACTIONS • MAN$I VERMA 🦀
  * Theme: Light/Neon Green (#00F801) & Dark Aesthetic Green (#0F460F)
  */
 
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // 4. Setup Interactive Features
   setupClipboard();
   setupCommandPalette(data);
-  setupResumeModal();
+  setupResumeModal(data.personal?.resumeUrl);
 
   // Set current year in footer
   const yearEl = document.getElementById("currentYear");
@@ -443,7 +443,7 @@ function setupCommandPalette(data) {
     { label: "Go to Highlights", category: "Section", action: () => scrollToId("highlights") },
     { label: "Go to GitHub Contributions Calendar", category: "Section", action: () => scrollToId("contributions") },
     { label: "Copy Email: ogmansi897@gmail.com", category: "Action", action: () => document.getElementById("emailCopyBtn")?.click() },
-    { label: "View Resume Summary", category: "Action", action: () => openResumeModal() },
+    { label: "Open Resume (Google Drive)", category: "Action", action: () => window.open(data.personal?.resumeUrl || "https://drive.google.com/file/d/1dUPG9-pj0mQ8EQxMUsu3stL_KPND7NuB/view?usp=drive_link", "_blank") },
     { label: "Visit GitHub: @mansiverma897993", category: "Social", action: () => window.open("https://github.com/mansiverma897993", "_blank") },
     { label: "Visit Twitter / X: @mansiverma897", category: "Social", action: () => window.open("https://x.com/mansiverma897", "_blank") },
     { label: "Visit LinkedIn Profile", category: "Social", action: () => window.open(data.personal?.socials?.linkedin || "https://linkedin.com", "_blank") },
@@ -578,27 +578,28 @@ function setupCommandPalette(data) {
 /* --------------------------------------------------------------------------
    Resume Modal
    -------------------------------------------------------------------------- */
-function setupResumeModal() {
+function setupResumeModal(resumeUrl) {
   const resumeBtn = document.getElementById("resumeBtn");
   const modal = document.getElementById("resumeModal");
   const closeBtn = document.getElementById("closeResumeBtn");
   const closeBtn2 = document.getElementById("closeResumeBtn2");
 
-  if (!modal) return;
+  const targetUrl = resumeUrl || "https://drive.google.com/file/d/1dUPG9-pj0mQ8EQxMUsu3stL_KPND7NuB/view?usp=drive_link";
+
+  if (resumeBtn) {
+    resumeBtn.href = targetUrl;
+    resumeBtn.target = "_blank";
+    resumeBtn.rel = "noopener noreferrer";
+  }
 
   window.openResumeModal = function() {
-    modal.classList.add("open");
+    window.open(targetUrl, "_blank");
   };
+
+  if (!modal) return;
 
   function closeModal() {
     modal.classList.remove("open");
-  }
-
-  if (resumeBtn) {
-    resumeBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      openResumeModal();
-    });
   }
 
   if (closeBtn) closeBtn.addEventListener("click", closeModal);
