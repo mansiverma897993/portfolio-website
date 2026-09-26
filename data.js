@@ -225,7 +225,7 @@ const portfolioData = {
   ],
 
   openSource: {
-    summary: "59 verified merged pull requests, fetched from GitHub, across production open-source projects including Qualcomm GenieX, Microsoft PowerToys, Juspay, SuperteamDAO, rust-lang/libc, Bevy, BOA, Floci, and CyberChef.",
+    summary: "60+ merged pull requests across production open-source projects including Qualcomm GenieX, Microsoft PowerToys, Juspay, SuperteamDAO, rust-lang/libc, Bevy, BOA, Floci, and CyberChef.",
     // The first six are intentionally curated for the initial view; the rest are
     // verified merged PRs, grouped only after the highest-impact work.
     prs: [

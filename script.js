@@ -285,8 +285,8 @@ function renderOpenSource(ossData) {
   allPrsList = ossData.prs || [];
   if (summaryEl && ossData.summary) {
     summaryEl.innerHTML = escapeHtml(ossData.summary).replace(
-      /^59 verified merged pull requests/,
-      '<strong style="color: var(--neon-green);">59 verified merged pull requests</strong>'
+      /^60\+ merged pull requests/,
+      '<strong style="color: var(--neon-green);">60+ merged pull requests</strong>'
     );
   }
   renderPrs(6); // Show first 6 by default
