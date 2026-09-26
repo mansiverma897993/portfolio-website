@@ -21,6 +21,7 @@ I'm a Systems and Full-Stack Software Developer specializing in **Rust**, distri
 - 🌐 **Official Open Source Contributor** with **60+ merged pull requests** across tier-1 production codebases including **Qualcomm GenieX** (16+ PRs merged), **Juspay** (TypeScript), **Microsoft PowerToys**, **Floci** (Java), **BOA** (ECMAScript engine), **rust-lang/libc**, **Bevy Engine**, and **CyberChef**.
 - ⛓️ **Solana Blockchain Lead** at CoE AI Skill Lab KIET, directing smart contract architectures, security audits, and hands-on developer workshops.
 - 🎓 **Aspire Institute Alumni** (Harvard University Affiliated Global Leadership Program).
+- ☁️ **AWS Certified Solutions Architect – Associate** (Amazon Web Services).
 
 ---
 
@@ -59,15 +60,23 @@ I'm a Systems and Full-Stack Software Developer specializing in **Rust**, distri
 
 ## 🌐 Selected Open Source Contributions
 
-- **qualcomm/GenieX**: Audio buffer chunking, WAV PCM header parsing, and base64 audio decoding (16+ PRs merged)
-- **microsoft/PowerToys**: Fix markdown preview parsing and syntax highlighting rendering (#34021)
-- **juspay/neurolink**: Recover partial object from truncated structured output in TypeScript (5+ PRs)
-- **SuperteamDAO/earn**: Live Twitter/X stats in sponsor submission details panel
-- **bevyengine/bevy**: Link Propagate structs to hierarchy plugin documentation
-- **floci-io/floci**: Eventarc trigger CRUD, Cloud Run event routing, and local GCP emulator (12+ PRs)
-- **boa-dev/boa**: Fix regexp source escaped slashes in ECMAScript engine conformance
-- **rust-lang/libc**: Add `SOL_LOCAL` socket constant for FreeBSD targets
-- **gchq/CyberChef**: Ciphers operations enhancement and hex payload formatting
+60+ pull requests merged into tier-1 open-source codebases and production systems:
+
+- **[qualcomm/GenieX#1313](https://github.com/qualcomm/GenieX/pull/1313)**: `feat(qairt): enable HTP multicore for QAIRT bundles`
+- **[qualcomm/GenieX#1342](https://github.com/qualcomm/GenieX/pull/1342)**: `feat(qairt): native stop sequences in the geniex-qairt pipeline`
+- **[qualcomm/GenieX#1418](https://github.com/qualcomm/GenieX/pull/1418)**: `feat(sdk): re-introduce ModelScope hub for geniex pull`
+- **[qualcomm/GenieX#1458](https://github.com/qualcomm/GenieX/pull/1458)**: `fix(server): decode base64 audio input`
+- **[qualcomm/GenieX#1324](https://github.com/qualcomm/GenieX/pull/1324)**: `fix(server): guard in-use models from keep-alive destruction`
+- **[qualcomm/geniex-qairt-plugin#35](https://github.com/qualcomm/geniex-qairt-plugin/pull/35)**: `feat(core): native stop-sequence support in the LLM pipeline`
+- **[qualcomm/geniex-proc#19](https://github.com/qualcomm/geniex-proc/pull/19)**: `feat: add byte-level StopMatcher for native stop sequences`
+- **[microsoft/PowerToys#48602](https://github.com/microsoft/PowerToys/pull/48602)**: `Fix WebView2 launch issues under AppContainer ACLs`
+- **[juspay/neurolink#1304](https://github.com/juspay/neurolink/pull/1304)**: `fix(json): recover a partial object from truncated structured output`
+- **[juspay/neurolink#1338](https://github.com/juspay/neurolink/pull/1338)**: `fix(providers): make provider registration statically discoverable`
+- **[floci-io/floci#2366](https://github.com/floci-io/floci/pull/2366)**: `fix(msk): persist CreateCluster broker node groups, encryption, client auth, logging, configuration and tags`
+- **[floci-io/floci#1736](https://github.com/floci-io/floci/pull/1736)**: `fix(s3): preserve literal '+' in object keys and support encoding-type=url in list-objects`
+- **[boa-dev/boa#5464](https://github.com/boa-dev/boa/pull/5464)**: `fix(vm): make loop iteration limit consistent across loop kinds`
+- **[boa-dev/boa#5403](https://github.com/boa-dev/boa/pull/5403)**: `fix: allow deriving both TryFromJs and TryIntoJs with custom converters`
+- **[UnplugAI/Unplug#146](https://github.com/UnplugAI/Unplug/pull/146)**: `test(security): move wall-clock scan-latency assertions off the PR gate`
 
 ---
 

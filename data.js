@@ -34,7 +34,7 @@ const portfolioData = {
     { 
       title: "Official Contributor in Qualcomm GenieX (16+ high quality merged PRs), BOA, Juspay (TypeScript), Floci (Java)", 
       tag: "Open Source",
-      url: "https://github.com/mansiverma897993?org=qualcomm&year_list=1" 
+      url: "https://github.com/qualcomm/GenieX/pulls?q=is%3Apr+author%3Amansiverma897993" 
     },
     { 
       title: "Founder of EBM (Tech content creator • 1.16k+ subscribers) • 2x Hackathon Winner", 
@@ -67,9 +67,9 @@ const portfolioData = {
       url: "https://drive.google.com/file/d/1fwDZIDoRx-Ha373JFG9ZcQui4SbkwA7V/view" 
     },
     { 
-      title: "60+ Merged Pull Requests across top-tier open source production repos", 
-      tag: "Open Source",
-      url: "https://github.com/mansiverma897993" 
+      title: "AWS Certified Solutions Architect – Associate", 
+      tag: "AWS / Cloud",
+      url: "https://drive.google.com/file/d/1lAvHlNHsvUK9gph29lN48jCfNQ13sd_E/view" 
     }
   ],
 
@@ -225,90 +225,195 @@ const portfolioData = {
   ],
 
   openSource: {
-    summary: "60+ pull requests merged into tier-1 open-source repositories and ecosystems including Qualcomm GenieX, Microsoft, Juspay, SuperteamDAO, Bevy Engine, Floci, BOA, rust-lang/libc, and SeaQL.",
+    summary: "60+ pull requests merged into tier-1 open-source codebases and systems including Qualcomm GenieX, Microsoft PowerToys, Juspay Neurolink, Floci Cloud Emulator, BOA JS Engine, and UnplugAI.",
     prs: [
       {
-        title: "qualcomm/GenieX: unblock cross-origin browser clients in server CORS middleware for OpenAI API",
+        title: "feat(qairt): enable HTP multicore for QAIRT bundles (#1313)",
         repo: "qualcomm/GenieX",
-        date: "2024",
-        url: "https://github.com/mansiverma897993?org=qualcomm&year_list=1",
+        platform: "GitHub",
+        url: "https://github.com/qualcomm/GenieX/pull/1313",
         type: "merged"
       },
       {
-        title: "qualcomm/geniex-qairt-plugin: request HTP multicore execution via NUMCORESgraphconfig",
+        title: "feat(qairt): native stop sequences in the geniex-qairt pipeline (#1342)",
+        repo: "qualcomm/GenieX",
+        platform: "GitHub",
+        url: "https://github.com/qualcomm/GenieX/pull/1342",
+        type: "merged"
+      },
+      {
+        title: "feat(sdk): re-introduce ModelScope hub for geniex pull (#1418)",
+        repo: "qualcomm/GenieX",
+        platform: "GitHub",
+        url: "https://github.com/qualcomm/GenieX/pull/1418",
+        type: "merged"
+      },
+      {
+        title: "fix(server): decode base64 audio input (#1458)",
+        repo: "qualcomm/GenieX",
+        platform: "GitHub",
+        url: "https://github.com/qualcomm/GenieX/pull/1458",
+        type: "merged"
+      },
+      {
+        title: "fix(server): guard in-use models from keep-alive destruction (#1324)",
+        repo: "qualcomm/GenieX",
+        platform: "GitHub",
+        url: "https://github.com/qualcomm/GenieX/pull/1324",
+        type: "merged"
+      },
+      {
+        title: "feat(server): add raw /v1/completions for FIM autocompletion (#1317)",
+        repo: "qualcomm/GenieX",
+        platform: "GitHub",
+        url: "https://github.com/qualcomm/GenieX/pull/1317",
+        type: "merged"
+      },
+      {
+        title: "feat(core): native stop-sequence support in the LLM pipeline (#35)",
         repo: "qualcomm/geniex-qairt-plugin",
-        date: "2024",
-        url: "https://github.com/mansiverma897993?org=qualcomm&year_list=1",
+        platform: "GitHub",
+        url: "https://github.com/qualcomm/geniex-qairt-plugin/pull/35",
         type: "merged"
       },
       {
-        title: "qualcomm/GenieX: fix base64 audio input decoding and quant-config sentinel handling (#1458)",
+        title: "feat(core): request HTP multicore execution via NUM_CORES graph config (#31)",
+        repo: "qualcomm/geniex-qairt-plugin",
+        platform: "GitHub",
+        url: "https://github.com/qualcomm/geniex-qairt-plugin/pull/31",
+        type: "merged"
+      },
+      {
+        title: "feat: add byte-level StopMatcher for native stop sequences (#19)",
+        repo: "qualcomm/geniex-proc",
+        platform: "GitHub",
+        url: "https://github.com/qualcomm/geniex-proc/pull/19",
+        type: "merged"
+      },
+      {
+        title: "fix(server): send spec-compliant finish_reason on stream chunks (#1246)",
         repo: "qualcomm/GenieX",
-        date: "2024",
-        url: "https://github.com/mansiverma897993?org=qualcomm&year_list=1",
+        platform: "GitHub",
+        url: "https://github.com/qualcomm/GenieX/pull/1246",
         type: "merged"
       },
       {
-        title: "microsoft/PowerToys: fix markdown preview parsing and syntax highlighting rendering (#34021)",
+        title: "fix(sdk): restore mtmd_input_text.text_len in VLM tokenize (#1273)",
+        repo: "qualcomm/GenieX",
+        platform: "GitHub",
+        url: "https://github.com/qualcomm/GenieX/pull/1273",
+        type: "merged"
+      },
+      {
+        title: "fix(cli): run update installer silently (#1352)",
+        repo: "qualcomm/GenieX",
+        platform: "GitHub",
+        url: "https://github.com/qualcomm/GenieX/pull/1352",
+        type: "merged"
+      },
+      {
+        title: "docs(docs): refresh README model sources and Android version (#1445)",
+        repo: "qualcomm/GenieX",
+        platform: "GitHub",
+        url: "https://github.com/qualcomm/GenieX/pull/1445",
+        type: "merged"
+      },
+      {
+        title: "Fix WebView2 launch issues under AppContainer ACLs (#48602)",
         repo: "microsoft/PowerToys",
-        date: "2024",
-        url: "https://github.com/mansiverma897993",
+        platform: "GitHub",
+        url: "https://github.com/microsoft/PowerToys/pull/48602",
         type: "merged"
       },
       {
-        title: "juspay/neurolink: recover partial object from truncated structured output in TypeScript (5+ PRs)",
+        title: "fix(json): recover a partial object from truncated structured output (#1304)",
         repo: "juspay/neurolink",
-        date: "2024",
-        url: "https://github.com/juspay/neurolink",
+        platform: "GitHub",
+        url: "https://github.com/juspay/neurolink/pull/1304",
         type: "merged"
       },
       {
-        title: "SuperteamDAO/earn: live Twitter/X stats in sponsor submission details panel",
-        repo: "SuperteamDAO/earn",
-        date: "2024",
-        url: "https://github.com/SuperteamDAO/earn",
+        title: "fix(providers): make provider registration statically discoverable (#1338)",
+        repo: "juspay/neurolink",
+        platform: "GitHub",
+        url: "https://github.com/juspay/neurolink/pull/1338",
         type: "merged"
       },
       {
-        title: "bevyengine/bevy: link Propagate structs to hierarchy plugin docs",
-        repo: "bevyengine/bevy",
-        date: "2024",
-        url: "https://github.com/bevyengine/bevy",
+        title: "fix(providers): add provider-base-class AST lint rule and continuous test suite validation (#1245)",
+        repo: "juspay/neurolink",
+        platform: "GitHub",
+        url: "https://github.com/juspay/neurolink/pull/1245",
         type: "merged"
       },
       {
-        title: "floci-io/floci: Eventarc trigger CRUD, Cloud Run event routing, and local GCP emulator (12+ PRs)",
+        title: "chore(quality): add issue references to remaining TODO comments (#1361)",
+        repo: "juspay/neurolink",
+        platform: "GitHub",
+        url: "https://github.com/juspay/neurolink/pull/1361",
+        type: "merged"
+      },
+      {
+        title: "fix(msk): persist CreateCluster broker node groups, encryption, client auth, logging, configuration and tags (#2366)",
         repo: "floci-io/floci",
-        date: "2024",
-        url: "https://github.com/floci-io/floci",
+        platform: "GitHub",
+        url: "https://github.com/floci-io/floci/pull/2366",
         type: "merged"
       },
       {
-        title: "boa-dev/boa: fix regexp source escaped slashes in ECMAScript engine conformance",
+        title: "fix(s3): preserve literal '+' in object keys and support encoding-type=url in list-objects (#1736)",
+        repo: "floci-io/floci",
+        platform: "GitHub",
+        url: "https://github.com/floci-io/floci/pull/1736",
+        type: "merged"
+      },
+      {
+        title: "fix(cloudformation): don't double-encode string-form SNS RedrivePolicy and FilterPolicy (#2325)",
+        repo: "floci-io/floci",
+        platform: "GitHub",
+        url: "https://github.com/floci-io/floci/pull/2325",
+        type: "merged"
+      },
+      {
+        title: "fix(apigateway): fall through to less specific resources on method mismatch (#1630)",
+        repo: "floci-io/floci",
+        platform: "GitHub",
+        url: "https://github.com/floci-io/floci/pull/1630",
+        type: "merged"
+      },
+      {
+        title: "fix(vm): make loop iteration limit consistent across loop kinds (#5464)",
         repo: "boa-dev/boa",
-        date: "2024",
-        url: "https://github.com/boa-dev/boa",
+        platform: "GitHub",
+        url: "https://github.com/boa-dev/boa/pull/5464",
         type: "merged"
       },
       {
-        title: "rust-lang/libc: add SOL_LOCAL socket constant for FreeBSD targets",
-        repo: "rust-lang/libc",
-        date: "2024",
-        url: "https://github.com/rust-lang/libc",
+        title: "fix: allow deriving both TryFromJs and TryIntoJs with custom converters (#5403)",
+        repo: "boa-dev/boa",
+        platform: "GitHub",
+        url: "https://github.com/boa-dev/boa/pull/5403",
         type: "merged"
       },
       {
-        title: "SeaQL/sea-orm: async dynamic model entity query optimizations in Rust",
-        repo: "SeaQL/sea-orm",
-        date: "2024",
-        url: "https://github.com/SeaQL/sea-orm",
+        title: "fix: route StdClock through crate::sys::time to prevent wasm panics (#5398)",
+        repo: "boa-dev/boa",
+        platform: "GitHub",
+        url: "https://github.com/boa-dev/boa/pull/5398",
         type: "merged"
       },
       {
-        title: "gchq/CyberChef: ciphers operations enhancement and hex payload formatting",
-        repo: "gchq/CyberChef",
-        date: "2024",
-        url: "https://github.com/gchq/CyberChef",
+        title: "test(security): move wall-clock scan-latency assertions off the PR gate (#146)",
+        repo: "UnplugAI/Unplug",
+        platform: "GitHub",
+        url: "https://github.com/UnplugAI/Unplug/pull/146",
+        type: "merged"
+      },
+      {
+        title: "fix(injection): don't flag ordinary non-English text as invisible_text (#123)",
+        repo: "UnplugAI/Unplug",
+        platform: "GitHub",
+        url: "https://github.com/UnplugAI/Unplug/pull/123",
         type: "merged"
       }
     ]
