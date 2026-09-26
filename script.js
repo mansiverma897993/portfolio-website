@@ -420,8 +420,8 @@ function setupCommandPalette(data) {
     { label: "Copy Email: ogmansi897@gmail.com", category: "Action", action: () => document.getElementById("emailCopyBtn")?.click() },
     { label: "Open Resume (Google Drive)", category: "Action", action: () => window.open(data.personal?.resumeUrl || "https://drive.google.com/file/d/1dUPG9-pj0mQ8EQxMUsu3stL_KPND7NuB/view?usp=drive_link", "_blank") },
     { label: "Visit GitHub: @mansiverma897993", category: "Social", action: () => window.open("https://github.com/mansiverma897993", "_blank") },
-    { label: "Visit Twitter / X: @mansiverma897", category: "Social", action: () => window.open("https://x.com/mansiverma897", "_blank") },
-    { label: "Visit LinkedIn Profile", category: "Social", action: () => window.open(data.personal?.socials?.linkedin || "https://linkedin.com", "_blank") },
+    { label: "Visit Twitter / X: @MansiVe61115132", category: "Social", action: () => window.open(data.personal?.socials?.twitter || "https://x.com/MansiVe61115132", "_blank") },
+    { label: "Visit LinkedIn Profile", category: "Social", action: () => window.open(data.personal?.socials?.linkedin || "https://www.linkedin.com/in/mansi-verma-4794a4328", "_blank") },
     { label: "Visit YouTube Channel (#ExpressByMansi)", category: "Social", action: () => window.open("https://www.youtube.com/hashtag/expressbymansi", "_blank") },
     { label: "Visit LeetCode: @mansiverma897", category: "Social", action: () => window.open(data.personal?.socials?.leetcode || "https://leetcode.com/u/mansiverma897/", "_blank") },
     { label: "Join Discord Community", category: "Social", action: () => window.open(data.personal?.socials?.discord || "https://discord.gg/missmv897_66227", "_blank") }

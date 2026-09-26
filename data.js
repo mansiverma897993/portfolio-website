@@ -21,8 +21,8 @@ const portfolioData = {
     resumeUrl: "https://drive.google.com/file/d/1dUPG9-pj0mQ8EQxMUsu3stL_KPND7NuB/view?usp=drive_link",
     socials: {
       github: "https://github.com/mansiverma897993",
-      twitter: "https://x.com/mansiverma897",
-      linkedin: "https://www.linkedin.com/in/mansi-verma-025539249/",
+      twitter: "https://x.com/MansiVe61115132",
+      linkedin: "https://www.linkedin.com/in/mansi-verma-4794a4328",
       youtube: "https://www.youtube.com/hashtag/expressbymansi",
       leetcode: "https://leetcode.com/u/mansiverma897/",
       discord: "https://discord.gg/missmv897_66227",

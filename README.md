@@ -4,8 +4,8 @@
 > *"I love rust I write rust Rust is lust ."*
 
 [![GitHub](https://img.shields.io/badge/GitHub-mansiverma897993-00F801?style=flat-square&logo=github&logoColor=black)](https://github.com/mansiverma897993)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Mansi_Verma-0F460F?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mansi-verma-025539249/)
-[![X / Twitter](https://img.shields.io/badge/Twitter-@mansiverma897-00F801?style=flat-square&logo=x&logoColor=black)](https://x.com/mansiverma897)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Mansi_Verma-0F460F?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mansi-verma-4794a4328)
+[![X / Twitter](https://img.shields.io/badge/Twitter-@MansiVe61115132-00F801?style=flat-square&logo=x&logoColor=black)](https://x.com/MansiVe61115132)
 [![LeetCode](https://img.shields.io/badge/LeetCode-mansiverma897-orange?style=flat-square&logo=leetcode&logoColor=black)](https://leetcode.com/u/mansiverma897/)
 [![Discord](https://img.shields.io/badge/Discord-Join-5865F2?style=flat-square&logo=discord&logoColor=white)](https://discord.gg/missmv897_66227)
 [![Resume](https://img.shields.io/badge/Resume-Google_Drive-white?style=flat-square&logo=googledrive&logoColor=black)](https://drive.google.com/file/d/1dUPG9-pj0mQ8EQxMUsu3stL_KPND7NuB/view?usp=drive_link)
@@ -105,7 +105,8 @@ I'm a Systems and Full-Stack Software Developer specializing in **Rust**, distri
 - **Email**: [ogmansi897@gmail.com](mailto:ogmansi897@gmail.com)
 - **Portfolio**: [MAN$I VERMA](https://mansiverma897993.github.io/) / [Vercel](https://ebm-tech.vercel.app/)
 - **GitHub**: [@mansiverma897993](https://github.com/mansiverma897993)
-- **Twitter / X**: [@mansiverma897](https://x.com/mansiverma897)
+- **LinkedIn**: [Mansi Verma](https://www.linkedin.com/in/mansi-verma-4794a4328)
+- **Twitter / X**: [@MansiVe61115132](https://x.com/MansiVe61115132)
 - **Discord**: [Join Discord](https://discord.gg/missmv897_66227)
 - **LeetCode**: [mansiverma897](https://leetcode.com/u/mansiverma897/)
 - **YouTube**: [Express By Mansi (EBM)](https://www.youtube.com/hashtag/expressbymansi)
