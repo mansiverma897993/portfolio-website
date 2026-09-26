@@ -282,11 +282,13 @@ function renderOpenSource(ossData) {
   const toggleBtn = document.getElementById("togglePrsBtn");
 
   if (!ossData) return;
-  if (summaryEl && ossData.summary) {
-    summaryEl.innerHTML = `<strong style="color: var(--neon-green);">60+ pull requests</strong> merged into tier-1 open-source codebases and systems including Qualcomm GenieX, Microsoft PowerToys, Juspay Neurolink, Floci Cloud Emulator, BOA JS Engine, and UnplugAI.`;
-  }
-
   allPrsList = ossData.prs || [];
+  if (summaryEl && ossData.summary) {
+    summaryEl.innerHTML = escapeHtml(ossData.summary).replace(
+      /^59 verified merged pull requests/,
+      '<strong style="color: var(--neon-green);">59 verified merged pull requests</strong>'
+    );
+  }
   renderPrs(6); // Show first 6 by default
 
   if (toggleBtn) {

@@ -225,198 +225,76 @@ const portfolioData = {
   ],
 
   openSource: {
-    summary: "60+ pull requests merged into tier-1 open-source codebases and systems including Qualcomm GenieX, Microsoft PowerToys, Juspay Neurolink, Floci Cloud Emulator, BOA JS Engine, and UnplugAI.",
+    summary: "59 verified merged pull requests, fetched from GitHub, across production open-source projects including Qualcomm GenieX, Microsoft PowerToys, Juspay, SuperteamDAO, rust-lang/libc, Bevy, BOA, Floci, and CyberChef.",
+    // The first six are intentionally curated for the initial view; the rest are
+    // verified merged PRs, grouped only after the highest-impact work.
     prs: [
-      {
-        title: "feat(qairt): enable HTP multicore for QAIRT bundles (#1313)",
-        repo: "qualcomm/GenieX",
-        platform: "GitHub",
-        url: "https://github.com/qualcomm/GenieX/pull/1313",
-        type: "merged"
-      },
-      {
-        title: "feat(qairt): native stop sequences in the geniex-qairt pipeline (#1342)",
-        repo: "qualcomm/GenieX",
-        platform: "GitHub",
-        url: "https://github.com/qualcomm/GenieX/pull/1342",
-        type: "merged"
-      },
-      {
-        title: "feat(sdk): re-introduce ModelScope hub for geniex pull (#1418)",
-        repo: "qualcomm/GenieX",
-        platform: "GitHub",
-        url: "https://github.com/qualcomm/GenieX/pull/1418",
-        type: "merged"
-      },
-      {
-        title: "fix(server): decode base64 audio input (#1458)",
-        repo: "qualcomm/GenieX",
-        platform: "GitHub",
-        url: "https://github.com/qualcomm/GenieX/pull/1458",
-        type: "merged"
-      },
-      {
-        title: "fix(server): guard in-use models from keep-alive destruction (#1324)",
-        repo: "qualcomm/GenieX",
-        platform: "GitHub",
-        url: "https://github.com/qualcomm/GenieX/pull/1324",
-        type: "merged"
-      },
-      {
-        title: "feat(server): add raw /v1/completions for FIM autocompletion (#1317)",
-        repo: "qualcomm/GenieX",
-        platform: "GitHub",
-        url: "https://github.com/qualcomm/GenieX/pull/1317",
-        type: "merged"
-      },
-      {
-        title: "feat(core): native stop-sequence support in the LLM pipeline (#35)",
-        repo: "qualcomm/geniex-qairt-plugin",
-        platform: "GitHub",
-        url: "https://github.com/qualcomm/geniex-qairt-plugin/pull/35",
-        type: "merged"
-      },
-      {
-        title: "feat(core): request HTP multicore execution via NUM_CORES graph config (#31)",
-        repo: "qualcomm/geniex-qairt-plugin",
-        platform: "GitHub",
-        url: "https://github.com/qualcomm/geniex-qairt-plugin/pull/31",
-        type: "merged"
-      },
-      {
-        title: "feat: add byte-level StopMatcher for native stop sequences (#19)",
-        repo: "qualcomm/geniex-proc",
-        platform: "GitHub",
-        url: "https://github.com/qualcomm/geniex-proc/pull/19",
-        type: "merged"
-      },
-      {
-        title: "fix(server): send spec-compliant finish_reason on stream chunks (#1246)",
-        repo: "qualcomm/GenieX",
-        platform: "GitHub",
-        url: "https://github.com/qualcomm/GenieX/pull/1246",
-        type: "merged"
-      },
-      {
-        title: "fix(sdk): restore mtmd_input_text.text_len in VLM tokenize (#1273)",
-        repo: "qualcomm/GenieX",
-        platform: "GitHub",
-        url: "https://github.com/qualcomm/GenieX/pull/1273",
-        type: "merged"
-      },
-      {
-        title: "fix(cli): run update installer silently (#1352)",
-        repo: "qualcomm/GenieX",
-        platform: "GitHub",
-        url: "https://github.com/qualcomm/GenieX/pull/1352",
-        type: "merged"
-      },
-      {
-        title: "docs(docs): refresh README model sources and Android version (#1445)",
-        repo: "qualcomm/GenieX",
-        platform: "GitHub",
-        url: "https://github.com/qualcomm/GenieX/pull/1445",
-        type: "merged"
-      },
-      {
-        title: "Fix WebView2 launch issues under AppContainer ACLs (#48602)",
-        repo: "microsoft/PowerToys",
-        platform: "GitHub",
-        url: "https://github.com/microsoft/PowerToys/pull/48602",
-        type: "merged"
-      },
-      {
-        title: "fix(json): recover a partial object from truncated structured output (#1304)",
-        repo: "juspay/neurolink",
-        platform: "GitHub",
-        url: "https://github.com/juspay/neurolink/pull/1304",
-        type: "merged"
-      },
-      {
-        title: "fix(providers): make provider registration statically discoverable (#1338)",
-        repo: "juspay/neurolink",
-        platform: "GitHub",
-        url: "https://github.com/juspay/neurolink/pull/1338",
-        type: "merged"
-      },
-      {
-        title: "fix(providers): add provider-base-class AST lint rule and continuous test suite validation (#1245)",
-        repo: "juspay/neurolink",
-        platform: "GitHub",
-        url: "https://github.com/juspay/neurolink/pull/1245",
-        type: "merged"
-      },
-      {
-        title: "chore(quality): add issue references to remaining TODO comments (#1361)",
-        repo: "juspay/neurolink",
-        platform: "GitHub",
-        url: "https://github.com/juspay/neurolink/pull/1361",
-        type: "merged"
-      },
-      {
-        title: "fix(msk): persist CreateCluster broker node groups, encryption, client auth, logging, configuration and tags (#2366)",
-        repo: "floci-io/floci",
-        platform: "GitHub",
-        url: "https://github.com/floci-io/floci/pull/2366",
-        type: "merged"
-      },
-      {
-        title: "fix(s3): preserve literal '+' in object keys and support encoding-type=url in list-objects (#1736)",
-        repo: "floci-io/floci",
-        platform: "GitHub",
-        url: "https://github.com/floci-io/floci/pull/1736",
-        type: "merged"
-      },
-      {
-        title: "fix(cloudformation): don't double-encode string-form SNS RedrivePolicy and FilterPolicy (#2325)",
-        repo: "floci-io/floci",
-        platform: "GitHub",
-        url: "https://github.com/floci-io/floci/pull/2325",
-        type: "merged"
-      },
-      {
-        title: "fix(apigateway): fall through to less specific resources on method mismatch (#1630)",
-        repo: "floci-io/floci",
-        platform: "GitHub",
-        url: "https://github.com/floci-io/floci/pull/1630",
-        type: "merged"
-      },
-      {
-        title: "fix(vm): make loop iteration limit consistent across loop kinds (#5464)",
-        repo: "boa-dev/boa",
-        platform: "GitHub",
-        url: "https://github.com/boa-dev/boa/pull/5464",
-        type: "merged"
-      },
-      {
-        title: "fix: allow deriving both TryFromJs and TryIntoJs with custom converters (#5403)",
-        repo: "boa-dev/boa",
-        platform: "GitHub",
-        url: "https://github.com/boa-dev/boa/pull/5403",
-        type: "merged"
-      },
-      {
-        title: "fix: route StdClock through crate::sys::time to prevent wasm panics (#5398)",
-        repo: "boa-dev/boa",
-        platform: "GitHub",
-        url: "https://github.com/boa-dev/boa/pull/5398",
-        type: "merged"
-      },
-      {
-        title: "test(security): move wall-clock scan-latency assertions off the PR gate (#146)",
-        repo: "UnplugAI/Unplug",
-        platform: "GitHub",
-        url: "https://github.com/UnplugAI/Unplug/pull/146",
-        type: "merged"
-      },
-      {
-        title: "fix(injection): don't flag ordinary non-English text as invisible_text (#123)",
-        repo: "UnplugAI/Unplug",
-        platform: "GitHub",
-        url: "https://github.com/UnplugAI/Unplug/pull/123",
-        type: "merged"
-      }
-    ]
+      ["qualcomm/GenieX", 1313, "feat(qairt): enable HTP multicore for QAIRT bundles"],
+      ["microsoft/PowerToys", 48602, "Fix WebView2 launch issues under AppContainer ACLs"],
+      ["juspay/neurolink", 1304, "fix(json): recover a partial object from truncated structured output"],
+      ["SuperteamDAO/earn", 1427, "feat: add live Twitter/X stats under submission details panel in spon…"],
+      ["rust-lang/libc", 5185, "FreeBSD: Add SOL_LOCAL"],
+      ["bevyengine/bevy", 25013, "app: link Propagate structs to HierarchyPropagatePlugin in docs"],
+      ["boa-dev/boa", 5464, "fix(vm): make loop iteration limit consistent across loop kinds"],
+      ["floci-io/floci", 2366, "fix(msk): persist CreateCluster broker node groups, encryption, client auth, logging, configuration and tags"],
+      ["qualcomm/GenieX", 1342, "feat(qairt): native stop sequences in the geniex-qairt pipeline"],
+      ["gchq/CyberChef", 2643, "feat: Extend automated ingredient validation to include argSelector ingredients"],
+      ["qualcomm/GenieX", 1458, "fix(server): decode base64 audio input"],
+      ["qualcomm/GenieX", 1418, "feat(sdk): re-introduce ModelScope hub for geniex pull"],
+      ["qualcomm/GenieX", 1445, "docs(docs): refresh README model sources and Android version"],
+      ["qualcomm/geniex-qairt-plugin", 35, "feat(core): native stop-sequence support in the LLM pipeline"],
+      ["qualcomm/geniex-proc", 19, "feat: add byte-level StopMatcher for native stop sequences"],
+      ["qualcomm/GenieX", 1352, "fix(cli): run update installer silently"],
+      ["qualcomm/GenieX", 1324, "fix(server): guard in-use models from keep-alive destruction"],
+      ["qualcomm/geniex-qairt-plugin", 31, "feat(core): request HTP multicore execution via NUM_CORES graph config"],
+      ["qualcomm/GenieX", 1317, "feat(server): add raw /v1/completions for FIM autocompletion"],
+      ["qualcomm/GenieX", 1246, "fix(server): send spec-compliant finish_reason on stream chunks"],
+      ["qualcomm/GenieX", 1273, "fix(sdk): restore mtmd_input_text.text_len in VLM tokenize"],
+      ["qualcomm/GenieX", 1228, "feat(sdk): auto-detect Snapdragon X2 Plus hosts"],
+      ["qualcomm/GenieX", 1222, "fix(server): unblock cross-origin browser clients in CORS middleware"],
+      ["qualcomm/GenieX", 1216, "fix(sdk): fold :default quant to its lower-case sentinel"],
+      ["juspay/neurolink", 1361, "chore(quality): add issue references to remaining TODO comments"],
+      ["juspay/neurolink", 1338, "fix(providers): make provider registration statically discoverable"],
+      ["juspay/neurolink", 1245, "fix(providers): add provider-base-class AST lint rule and continuous test suite validation"],
+      ["juspay/neurolink", 1242, "fix(media): resolve no-type-export-outside-types in media processor"],
+      ["juspay/neurolink", 1226, "chore(quality): add issue references to TODO/FIXME comments"],
+      ["floci-io/floci", 1736, "fix(s3): preserve literal '+' in object keys and support encoding-type=url in list-objects"],
+      ["floci-io/floci", 2325, "fix(cloudformation): don't double-encode string-form SNS RedrivePolicy and FilterPolicy"],
+      ["floci-io/floci", 1630, "fix(apigateway): fall through to less specific resources on method mismatch"],
+      ["floci-io/floci", 1440, "fix(acm): restore ACM certificates after restart by ignoring computed getters"],
+      ["floci-io/floci", 1458, "fix(cfn): support oauth and callback configurations in UserPoolClient"],
+      ["floci-io/floci", 1291, "feat(ec2): support Spot Instance request actions"],
+      ["floci-io/floci", 1213, "feat(athena): support DeleteWorkGroup action"],
+      ["floci-io/floci-gcp", 74, "feat(eventarc): implement Eventarc REST Service trigger CRUD and CloudEvents"],
+      ["floci-io/floci-gcp", 72, "fix(gcs): resolve 405 Method Not Allowed during resumable upload"],
+      ["floci-io/floci-gcp", 64, "fix(cloudsql): dynamically set postgres mount path based on version"],
+      ["floci-io/floci-gcp", 54, "feat: implement Cloud Monitoring (Metrics) service and integration tests"],
+      ["floci-io/floci-az", 79, "fix: resolve Service Bus index error and add root/host-based routing"],
+      ["floci-io/floci-cli", 8, "fix(start): mount host persistent path to /app/data in container"],
+      ["boa-dev/boa", 5403, "fix: allow deriving both TryFromJs and TryIntoJs with custom converters"],
+      ["boa-dev/boa", 5398, "fix: route StdClock through crate::sys::time to prevent wasm panics"],
+      ["bevyengine/bevy", 24676, "Rename NextState::set_if_neq to set_if_different to resolve clashing names"],
+      ["gchq/CyberChef", 2581, "fix: support constructor and __proto__ parameters in Parse URI"],
+      ["gchq/CyberChef", 2625, "feat: Implement automated option-type ingredient validation"],
+      ["gchq/CyberChef", 2561, "feat: Add automated parameter validation framework"],
+      ["UnplugAI/Unplug", 146, "test(security): move wall-clock scan-latency assertions off the PR gate"],
+      ["UnplugAI/Unplug", 123, "fix(injection): don't flag ordinary non-English text as invisible_text"],
+      ["akash-mondal/benzo", 3, "fix(wallet): fallback to localAddress on Receive screen when BFF/network is offline"],
+      ["akash-mondal/benzo", 2, "feat(wallet): make benzo wallet local-first and remove handles"],
+      ["akash-mondal/benzo", 1, "fix(chain): implement local StellarRpcClient fallback to bypass stellar CLI dependency"],
+      ["solana-foundation/templates", 321, "Add .gitignore to pinocchio template"],
+      ["mansiverma897993/Open-Source-Guide", 1, "Add opensoursess static site and deployment config"],
+      ["mansiverma897993/Robox", 1, "Build Robox security auditor platform"],
+      ["mansiverma897993/yolo-badge-test", 1, "Testing YOLO badge"],
+      ["GEEK-ROOM-KIET/geekroom-kiet", 34, "Fix: Replace Robotics card with PR & Sponsorship card"],
+      ["JiyaGupta-cs/fosscu-git", 39, "added mansiverma897 as user"]
+    ].map(([repo, number, title]) => ({
+      title: `${title} (#${number})`,
+      repo,
+      platform: "GitHub",
+      url: `https://github.com/${repo}/pull/${number}`,
+      type: "merged"
+    }))
   },
 
   hackathons: [
