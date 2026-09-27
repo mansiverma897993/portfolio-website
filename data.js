@@ -18,7 +18,7 @@ const portfolioData = {
     bio1: "I'm a Systems and Full-Stack Software Developer specializing in Rust, distributed backends, and Solana on-chain engineering. Founder of EBM (Tech content creator • 1.16k+ subscribers), 2x Hackathon Winner. Official contributor to Qualcomm GenieX (16+ PRs merged), Juspay, Microsoft, Floci, BOA, rust-lang/libc, Bevy, and CyberChef with 60+ merged pull requests in production codebases.",
     bio2: "",
     email: "ogmansi897@gmail.com",
-    resumeUrl: "https://drive.google.com/file/d/1dUPG9-pj0mQ8EQxMUsu3stL_KPND7NuB/view?usp=drive_link",
+    resumeUrl: "https://drive.google.com/file/d/1CQHXZRh1yWA2Enri5Meutn20cpaJH83O/view?usp=sharing",
     socials: {
       github: "https://github.com/mansiverma897993",
       twitter: "https://x.com/MansiVe61115132",

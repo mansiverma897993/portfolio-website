@@ -424,7 +424,7 @@ function setupCommandPalette(data) {
     { label: "Go to Certifications & Achievements", category: "Section", action: () => scrollToId("achievements") },
     { label: "Go to Highlights", category: "Section", action: () => scrollToId("highlights") },
     { label: "Copy Email: ogmansi897@gmail.com", category: "Action", action: () => document.getElementById("emailCopyBtn")?.click() },
-    { label: "Open Resume (Google Drive)", category: "Action", action: () => window.open(data.personal?.resumeUrl || "https://drive.google.com/file/d/1dUPG9-pj0mQ8EQxMUsu3stL_KPND7NuB/view?usp=drive_link", "_blank") },
+    { label: "Open Resume (Google Drive)", category: "Action", action: () => window.open(data.personal?.resumeUrl || "https://drive.google.com/file/d/1CQHXZRh1yWA2Enri5Meutn20cpaJH83O/view?usp=sharing", "_blank") },
     { label: "Visit GitHub: @mansiverma897993", category: "Social", action: () => window.open("https://github.com/mansiverma897993", "_blank") },
     { label: "Visit Twitter / X: @MansiVe61115132", category: "Social", action: () => window.open(data.personal?.socials?.twitter || "https://x.com/MansiVe61115132", "_blank") },
     { label: "Visit LinkedIn Profile", category: "Social", action: () => window.open(data.personal?.socials?.linkedin || "https://www.linkedin.com/in/mansi-verma-4794a4328", "_blank") },
@@ -575,7 +575,7 @@ function setupResumeModal(resumeUrl) {
   const closeBtn = document.getElementById("closeResumeBtn");
   const closeBtn2 = document.getElementById("closeResumeBtn2");
 
-  const targetUrl = resumeUrl || "https://drive.google.com/file/d/1dUPG9-pj0mQ8EQxMUsu3stL_KPND7NuB/view?usp=drive_link";
+  const targetUrl = resumeUrl || "https://drive.google.com/file/d/1CQHXZRh1yWA2Enri5Meutn20cpaJH83O/view?usp=sharing";
 
   if (resumeBtn) {
     resumeBtn.href = targetUrl;

@@ -8,7 +8,7 @@
 [![X / Twitter](https://img.shields.io/badge/Twitter-@MansiVe61115132-00F801?style=flat-square&logo=x&logoColor=black)](https://x.com/MansiVe61115132)
 [![LeetCode](https://img.shields.io/badge/LeetCode-mansiverma897-orange?style=flat-square&logo=leetcode&logoColor=black)](https://leetcode.com/u/mansiverma897/)
 [![Discord](https://img.shields.io/badge/Discord-Join-5865F2?style=flat-square&logo=discord&logoColor=white)](https://discord.gg/missmv897_66227)
-[![Resume](https://img.shields.io/badge/Resume-Google_Drive-white?style=flat-square&logo=googledrive&logoColor=black)](https://drive.google.com/file/d/1dUPG9-pj0mQ8EQxMUsu3stL_KPND7NuB/view?usp=drive_link)
+[![Resume](https://img.shields.io/badge/Resume-Google_Drive-white?style=flat-square&logo=googledrive&logoColor=black)](https://drive.google.com/file/d/1CQHXZRh1yWA2Enri5Meutn20cpaJH83O/view?usp=sharing)
 
 ---
 
